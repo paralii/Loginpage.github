@@ -1,0 +1,15 @@
+.center-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.border {
+    border-radius: 10px;
+}
+.title {
+    border-bottom: 1px solid #ddd;
+}
+.alert {
+    margin-top: 1rem;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=locals.title ? title:'Sign In' %></title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="basestyle.css">
+</head>
+<body>
+    <div class="text-center center-div" id="login">
+        <div class="container w-25 border py5">
+            <div class="title p-2">
+                <h2 class="font-weight-bold">Review</h2>
+                <span>Sign in </span>
+                <% if (locals.error) { %>
+                    <div class="alert alert-danger"><%= error %></div>
+                <% } %>
+                <% if (locals.logout) { %>
+                    <div class="alert alert-success">Logout Successful!</div>
+                <% } %>
+            </div>
+            <form action="/route/login" method="POST" class="p-2" onsubmit="return validateForm()">
+                <div class="form-group p-2">
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Email" required>    
+                    <div id="email-error" class="text-danger"></div>
+                </div>
+                <div class="form-group p-2">
+                    <input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
+                    <div id="password-error" class="text-danger"></div>
+                </div>
+                <div id="submit-error" class="text-danger"></div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success rounded-pill">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="baseScript.js"></script>
+</body>
+</html>

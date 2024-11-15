@@ -1,0 +1,16 @@
+body {
+    background-image: url('/assets/background-image.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+}
+.center-div {
+    padding-top: 10%;
+}
+.btn.btn-success {
+    padding: .4em 2em;
+}
+form {
+    padding: 0 3em;
+}
+

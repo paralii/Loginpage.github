@@ -24,7 +24,7 @@ app.use('/static',express.static(path.join(__dirname, 'public')));
 app.use('/assets',express.static(path.join(__dirname, 'public/assets')));
 
 
-//
+//sessions
 app.use(session({
     secret:uuid4(),
     resave:false,
@@ -50,7 +50,7 @@ app.get('/', (req, res) => {
     }
 });
 
-
+//error page
 app.use('*', (req, res) => {
     res.status(404).render('error', {
         title: "Page Not Found",
